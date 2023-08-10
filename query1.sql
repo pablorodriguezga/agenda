@@ -3,7 +3,9 @@ SELECT * FROM usuario
 
 SELECT 
     CONCAT(c.nombre, ' ', c.apellidos) AS Contacto,
-    CONCAT(u.nombre, ' ', u.apellidos) AS Usuario
+    CONCAT(u.nombre, ' ', u.apellidos) AS Usuario,
+	c.id AS IDContacto,
+	u.id AS IDUsuario
 FROM 
     pertenece p
 INNER JOIN 

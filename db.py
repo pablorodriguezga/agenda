@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-DATABASE_URI = 'postgresql://postgres:amigotes21@localhost:5432/agenda'
+DATABASE_URI = 'postgresql://_0417b1ffe0f86b1b:_6746430207e5957bac157ef7bd0c34@primary.postgresql--zmqg5m9l82lf.addon.code.run:29611/_df7df579d150?sslmode=require'
 
 def conectar():
     engine = create_engine(DATABASE_URI)
