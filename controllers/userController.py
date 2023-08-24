@@ -4,7 +4,12 @@ from models import Roles
 
 def seleccionarUsuario(email,password):
     session = conectar()
-    usuarios = session.query(Usuario).filter(Usuario.email == email, Usuario.password == password).all()
+    try:
+        usuarios = session.query(Usuario).filter(Usuario.email == email, Usuario.password == password).all()
+    except Exception as e:
+        print(e)
+    finally:
+        session.close()
     return usuarios
 
 def insertarUser(nombre,apellidos,email,password,rol_id):
