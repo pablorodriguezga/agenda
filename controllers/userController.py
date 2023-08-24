@@ -3,7 +3,7 @@ from models import Usuario
 from models import Roles
 
 def seleccionarUsuario(email,password):
-    user_info = {"id": 0, "id_rol": None}
+    session = conectar()
     usuarios = session.query(Usuario).filter(Usuario.email == email, Usuario.password == password).all()
     return usuarios
 
