@@ -3,13 +3,13 @@ from models import Usuario
 from models import Roles
 
 def seleccionarUsuario(email,password):
-    user_info = {"id": 0, "rol_id": None}
+    user_info = {"id": 0, "id_rol": None}
     try:
         session = conectar()
         usuarios = session.query(Usuario).filter(Usuario.email == email, Usuario.password == password).all()
         if len(usuarios) > 0:
             user_info["id"] = usuarios[0].id
-            user_info["rol_id"] = usuarios[0].rol_id
+            user_info["id_rol"] = usuarios[0].id_rol
     except Exception as e:
         print(e)
     finally:

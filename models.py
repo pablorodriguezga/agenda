@@ -25,7 +25,7 @@ class Usuario(Base):
 
     def __repr__(self):
         return f"<Usuario(id={self.id}, nombre={self.nombre}, apellidos={self.apellidos}, "\
-        f"email={self.email}, password={self.password}, id_rol={self.id_rol})"
+        f"email={self.email}, password={self.password}, rol_id={self.id_rol})"
 
 
 @dataclass
