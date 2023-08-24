@@ -5,15 +5,6 @@ from models import Roles
 def seleccionarUsuario(email,password):
     user_info = {"id": 0, "id_rol": None}
     usuarios = session.query(Usuario).filter(Usuario.email == email, Usuario.password == password).all()
-    try:
-        session = conectar()
-        if len(usuarios) > 0:
-            user_info["id"] = usuarios[0].id
-            user_info["id_rol"] = usuarios[0].id_rol
-    except Exception as e:
-        print(e)
-    finally:
-        session.close()
     return usuarios
 
 def insertarUser(nombre,apellidos,email,password,rol_id):
