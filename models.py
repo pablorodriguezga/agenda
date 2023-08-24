@@ -13,6 +13,7 @@ class Usuario(Base):
     apellidos:str
     email: str
     password: str
+    id_rol: int
 
     __tablename__ = 'usuario'
     id = Column (Integer, primary_key=True)
@@ -20,10 +21,11 @@ class Usuario(Base):
     apellidos = Column(String, nullable=False)
     email = Column(String, nullable=False)
     password = Column(String, nullable=False)
+    id_rol = Column(Integer, nullable=False)
 
     def __repr__(self):
         return f"<Usuario(id={self.id}, nombre={self.nombre}, apellidos={self.apellidos}, "\
-        f"email={self.email}, password={self.password})"
+        f"email={self.email}, password={self.password}, id_rol={self.id_rol})"
 
 
 @dataclass
@@ -60,3 +62,13 @@ class Pertenece(Base):
     id = Column (Integer, primary_key=True)
     id_usuario = Column(Integer, nullable=False)
     id_contacto = Column(Integer, nullable=False)
+
+@dataclass
+class Roles(Base):
+    id: int
+    rol: str
+
+
+    __tablename__ = 'roles'
+    id = Column (Integer, primary_key=True)
+    rol = Column(String, nullable=False)
