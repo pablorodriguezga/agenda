@@ -14,7 +14,7 @@ def seleccionarUsuario(email,password):
         print(e)
     finally:
         session.close()
-    return user_info
+    return usuarios
 
 def insertarUser(nombre,apellidos,email,password,rol_id):
     try:
