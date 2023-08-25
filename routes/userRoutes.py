@@ -20,8 +20,9 @@ def insertUser():
     apellidos = parametros['apellidos']
     email = parametros['email']
     password = parametros['password']
+    id_rol = parametros['id_rol']
 
-    result = userController.insertarUser(nombre,apellidos,email,password)
+    result = userController.insertarUser(nombre,apellidos,email,password,id_rol)
     return jsonify({'result': result})
 
 @user_api.route("/roles", methods=['GET'])
